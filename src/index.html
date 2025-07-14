@@ -1,0 +1,566 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    body {
+        /* background-color: var(--color-gray-100) */
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper {
+        width: 100%;
+        
+
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .swiper-slide img {
+        display: block;
+        /*width: 90%;
+      height: 100%; */
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+    .customSwiper {
+        width: 100%;
+        background-color: rgb(242, 245, 245);
+        padding: 70px;
+        /* height: 15%; */
+    }
+
+    .customSwiper .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 50px;
+    }
+
+    .customSwiper .swiper-slide img {
+        width: 150px;
+        height: 150px;
+    }
+</style>
+
+<body>
+    <!-- <button class="text-3xl text-blue-500 cursor-pointer" id="menu-btn">&#8801;</button> -->
+    <header class="w-full h-auto top-0 z-50 bg-white shadow fixed">
+        <div class="flex items-center px-8 py-4">
+            <!-- Hamburger Icon (visible only on small screens) -->
+            <button class="text-4xl text-black cursor-pointer" id="menu-btn">&#8801;</button>
+            <div class="">
+
+                <button class="text-4xl text-black cursor-pointer hidden" id="menu-btn2">&#10005;</button>
+            </div>
+
+            <!-- Brand Logo -->
+            <div>
+                <img class="mt-3 ml-6 w-24" src="image/brand-logo.png" alt="Brand Logo">
+            </div>
+
+            <!-- DELIVERY Button -->
+            <button class="hidden md:flex border-2 rounded border-red-500 gap-2 ml-5 w-40 h-12 mt-2 items-center">
+                <img class="w-10 h-10 ml-3" src="image/Delivery.png" alt="Delivery Icon">
+                <span class="font-bold">DELIVERY</span>
+            </button>
+
+            <!-- PICKUP Button -->
+            <button class="hidden md:flex bg-gray-100 rounded gap-2 ml-5 w-38 h-12 mt-2 items-center">
+                <img class="w-10 h-10 ml-3" src="image/pickup.png" alt="Pickup Icon">
+                <span class="font-bold">PICKUP</span>
+            </button>
+
+            <!-- Spacer -->
+            <div class="flex-grow"></div>
+
+            <!-- Brand 2 and Login -->
+            <div class="hidden md:flex items-center gap-4">
+                <img class="w-10 h-10" src="image/brand2.PNG" alt="Brand 2">
+                <button class="bg-red-600 text-white font-semibold h-10 px-4 rounded shadow-md">
+                    LOGIN
+                </button>
+            </div>
+        </div>
+
+        
+       
+    </header>
+
+<!-- Mobile Menu -->
+     <div id="mobile-nav" class="hidden px-4 pb-4 relative">
+            <div class="w-68  bg-gray-100 p-4 space-y-4 ">
+                <button class="bg-red-600 text-white px-4 py-2 rounded hover:shadow transition w-22">LOGIN</button>
+
+                <div class="flex space-x-6 items-center justify-end">
+                    <button class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">Day</button>
+                    <button class="bg-white text-black px-3 py-1 rounded-full text-sm border">Night</button>
+                </div>
+
+                <hr />
+
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2 hover:bg-gray-300 p-4 rounded">
+                        <img src="image/Store-Locator.jpg" alt="" class="w-5 h-5" />
+                        <span class="text-sm font-medium">Store Locator</span>
+                    </div>
+                    <div class="flex items-center space-x-2 hover:bg-gray-300 p-4 rounded">
+                        <img src="image/Tracking-order.jpg" alt="" class="w-5 h-5" />
+                        <span class="text-sm font-medium">Track Order</span>
+                    </div>
+                    <div class="flex items-center space-x-2 hover:bg-gray-300 p-4 rounded">
+                        <img src="image/Explore-menu.jpg" alt="" class="w-5 h-5" />
+                        <span class="text-sm font-medium">Explore Menu</span>
+                    </div>
+                </div>
+
+                <hr />
+
+                <ul class="space-y-2 text-black text-3xl font-bold">
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">FeedBack</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">About Us</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Terms & Conditions</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Privacy Policy</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Contact Us</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Mitao Bhook</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Mitao Bhook Scholarship</li>
+                    <li class="text-sm hover:bg-gray-300 p-4 rounded">Careers</li>
+                </ul>
+            </div>
+        </div>
+    <!-- carousel start here -->
+    <div class="swiper mySwiper w-full">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flex justify-center items-center"><img src="image/carousel1.jpg" alt=""></div>
+            <div class="swiper-slide flex justify-center items-center"><img src="image/carousel2.jpg" alt=""></div>
+            <div class="swiper-slide flex justify-center items-center"><img src="image/carousel3.jpg" alt=""></div>
+            <div class="swiper-slide flex justify-center items-center"><img src="image/carousel4.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+    <br>
+    <div class="flex items-center justify-center">
+        <button class="bg-red-600 font-bold text-white w-[600px] h-10 rounded">
+            REORDER
+        </button>
+
+    </div>
+
+    <!-- carousel 2 start here -->
+    <div class="swiper customSwiper px-4 py-10">
+        <!-- Section Title -->
+        <div class="text-2xl sm:text-3xl font-bold text-black mb-2 pl-2 sm:pl-2">EXPLORE MENU</div>
+        <div class="bg-red-700 h-1 w-16 sm:w-20 rounded-full mb-6 pl-2 sm:pl-2"></div>
+
+        <!-- Swiper Wrapper -->
+      <div class="swiper-wrapper px-2 sm:px-5 gap-6">
+    <!-- Slide 1 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food1.png" alt="Promotion" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">Promotion</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food2.png" alt="Everyday Value" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">Everyday Value</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food3.png" alt="Ala Carte & Combos" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">Ala-Carte-&-Combos</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food4.png" alt="Signature Boxes" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">Signature-Boxes</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food5.png" alt="Sharing Snacks" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">SharingSnake-&-Beverages</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="swiper-slide flex justify-center">
+        <div
+            class="flex flex-col items-center justify-center bg-white rounded-full p-6 w-48 h-48 sm:w-56 sm:h-56 shadow-md hover:animate-bounce">
+            <img src="image/food6.png" alt="Midnight Start" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+            <p class="text-center font-semibold mt-4 text-black text-sm sm:text-base">(Midnight-Start at 12am)</p>
+            <div class="w-10 sm:w-12 h-1 bg-red-500 rounded-full mt-1"></div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Swiper Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- BEST SELLERS start -->
+
+    <div class="bg-gray-200 py-8 px-4">
+        <!-- Title -->
+        <div class="font-bold text-3xl text-black ml-4">BEST SELLERS</div>
+        <div class="w-16 h-1 bg-red-700 ml-4 mt-1"></div>
+
+        <!-- Scrollable Cards Container -->
+        <div class="overflow-x-auto whitespace-nowrap mt-6 pb-4">
+            <div class="flex space-x-4 w-max px-2">
+
+                <!-- Card 1 -->
+                <div class="bg-white min-w-[330px]  shadow-sm  rounded">
+                    <div class="flex justify-center space-x-1 mb-2">
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-center">Krunch Burger</h3>
+                    <div class="inline-block bg-red-600 text-white px-3 py-1 font-bold text-sm mb-2 ml-64">
+                        Rs <span class="text-lg">310</span>
+                    </div>
+                    <img src="image/card1.png" alt="Krunch Burger" class="mx-auto mt-2 h-68 object-contain" />
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white min-w-[330px]  shadow-sm  rounded">
+                    <div class="flex justify-center space-x-1 mb-2">
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-center">Krunch Combo</h3>
+                    <div class="inline-block bg-red-600 text-white px-3 py-1 font-bold text-sm mb-2 ml-64">
+                        Rs <span class="text-lg">590</span>
+                    </div>
+                    <img src="image/card2.png" alt="Krunch Combo" class="mx-auto mt-2 h-68 object-contain" />
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white min-w-[330px]  shadow-sm brounded">
+                    <div class="flex justify-center space-x-1 mb-2">
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-center">Chicken & Chips</h3>
+                    <div class="inline-block bg-red-600 text-white px-3 py-1 font-bold text-sm mb-2 ml-64">
+                        Rs <span class="text-lg">620</span>
+                    </div>
+                    <img src="image/card3.png" alt="Chicken & Chips" class="mx-auto mt-2 h-68 object-contain" />
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white min-w-[330px]  shadow-sm  rounded">
+                    <div class="flex justify-center space-x-1 mb-2">
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                        <div class="w-3 h-6 bg-red-600"></div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-center">Hot Wings Bucket</h3>
+                    <div class="inline-block bg-red-600 text-white px-3 py-1 font-bold text-sm mb-2 ml-64">
+                        Rs <span class="text-lg">670</span>
+                    </div>
+                    <img src="image/card1.png" alt="Krunch Burger" class="mx-auto mt-2 h-68 object-contain" />
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white min-w-[330px]  shadow-sm rounded">
+                    <div class="bg-white min-w-[260px] text-center shadow-sm  rounded">
+                        <div class="flex justify-center space-x-1 mb-2">
+                            <div class="w-3 h-6 bg-red-600"></div>
+                            <div class="w-3 h-6 bg-red-600"></div>
+                            <div class="w-3 h-6 bg-red-600"></div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-center">Mighty Zinger</h3>
+                        <div class="inline-block bg-red-600 text-white px-3 py-1 font-bold text-sm mb-2 ml-64">
+                            Rs <span class="text-lg">770</span>
+                        </div>
+                        <img src="image/card5.png" alt="Krunch Burger" class="mx-auto mt-2 h-68 object-contain" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- top start here -->
+
+    <div class="max-w-full mx-auto p-6 bg-gray-200">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <img src="image/top1.png" alt="Crispy Duo Box" class="rounded-lg w-full h-48 object-cover">
+                <h2 class="font-bold text-lg mt-4">Crispy Duo Box</h2>
+                <p class="text-gray-600 text-sm mt-2">Turn up the fun with 5 pcs Hot &amp; Crispy Chicken + 1 Large
+                    fries + 2...</p>
+                <div class="mt-4 font-bold text-black">Rs 1350</div>
+                <button
+                    class="mt-0 w-38 bg-red-600 text-white font-bold py-2 rounded hover:bg-white hover:text-red-600 border-2 border-red-600 block mx-auto">
+                    + ADD TO BUCKET
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <img src="image/top2.png" alt="Xtreme Duo Box" class="rounded-lg w-full h-48 object-cover">
+                <h2 class="font-bold text-lg mt-4">Xtreme Duo Box</h2>
+                <p class="text-gray-600 text-sm mt-2">The irresistible combo of 2 Signature Zingers + 2 pcs Hot &amp;...
+                </p>
+                <div class="mt-4 font-bold text-black">Rs 1560</div>
+                <button
+                    class="mt-0 w-38 bg-red-600 text-white font-bold py-2 rounded hover:bg-white hover:text-red-600 border-2 border-red-600 block mx-auto">
+                    + ADD TO BUCKET
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <img src="image/top3.png" alt="Value Bucket" class="rounded-lg w-full h-48 object-cover">
+                <h2 class="font-bold text-lg mt-4">Value Bucket</h2>
+                <p class="text-gray-600 text-sm mt-2">Enjoy 9 pcs of our Signature Crispy Fried Chicken, hand-breaded
+                    in-...</p>
+                <div class="mt-4 font-bold text-black">Rs 2050</div>
+                <button
+                    class="mt-0 w-38 bg-red-600 text-white font-bold py-2 rounded hover:bg-white hover:text-red-600 border-2 border-red-600 block mx-auto">
+                    + ADD TO BUCKET
+                </button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <img src="image/top4.png" alt="Family Festival 3" class="rounded-lg w-full h-48 object-cover">
+                <h2 class="font-bold text-lg mt-4">Family Festival 3</h2>
+                <p class="text-gray-600 text-sm mt-2">An ultimate meal for the fam. It includes 4 Zinger burgers + 4...
+                </p>
+                <div class="mt-4 font-bold text-black">Rs 2590</div>
+                <button
+                    class="mt-0 w-38 bg-red-600 text-white font-bold py-2 rounded hover:bg-white hover:text-red-600 border-2 border-red-600 block mx-auto">
+                    + ADD TO BUCKET
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- top end here -->
+    <!-- image section start here -->
+    <div class="bg-gray-100 px-4 py-12 space-y-12">
+        <!-- First Row -->
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div class="w-full lg:w-1/2 h-64 sm:h-80 md:h-96">
+                <img src="image/pic1.png" alt="Image 1" class="w-full h-full object-cover rounded-2xl" />
+            </div>
+            <div class="w-full lg:w-1/2 h-64 sm:h-80 md:h-96">
+                <img src="image/pic2.png" alt="Image 2" class="w-full h-full object-cover rounded-2xl" />
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div class="w-full lg:w-1/2 h-64 sm:h-80 md:h-96">
+                <img src="image/pic3.jpg" alt="Image 3" class="w-full h-full object-cover rounded-2xl" />
+            </div>
+
+            <div class="w-full lg:w-1/2 bg-white rounded-2xl p-6 flex flex-col justify-center">
+                <img src="image/pic4.png" alt="Image 4"
+                    class="w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 mx-auto mb-6 rounded-2xl" />
+                <h1 class="text-xl sm:text-2xl font-bold text-center mb-6">
+                    Adding 11 herbs and spices, Explore our menu and add items to your cart.
+                </h1>
+                <button
+                    class="w-48 sm:w-56 bg-red-600 text-white font-semibold text-lg sm:text-2xl py-3 sm:py-4 rounded mx-auto hover:bg-white hover:text-red-600 border-2 border-red-600 transition">
+                    EXPLORE MENU
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer start here -->
+    <footer class="bg-gray-100 text-gray-600 py-8 px-4">
+        <!-- Logo and Social Media -->
+        <div class="flex items-center justify-center mb-6">
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <img src="image/brand-logo.png" alt="Brand Logo" class="h-10 md:h-12" />
+                <img src="image/facebook.jpeg" alt="Facebook" class="w-10 h-10 md:w-12 md:h-12 rounded-full" />
+                <img src="image/youtube.png" alt="YouTube" class="w-10 h-10 md:w-12 md:h-12 rounded-full" />
+                <img src="image/instagram2.png" alt="Instagram" class="w-10 h-10 md:w-12 md:h-12 rounded-full" />
+            </div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+            <!-- Navigation Links -->
+            <div class="w-full lg:w-2/3 px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-xl">
+                    <!-- About Us -->
+                    <div>
+                        <h4 class="font-bold mb-2">About Us</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="hover:text-red-600">Mitao Bhook</a></li>
+                            <li><a href="#" class="hover:text-red-600">Mitao Bhook - Scholarship</a></li>
+                            <li><a href="#" class="hover:text-red-600">Privacy Policy</a></li>
+                        </ul>
+                        <p class="mt-4 text-sm">
+                            <a href="#" class="hover:text-red-600">2025 KFC. All rights reserved</a>
+                        </p>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div>
+                        <h4 class="font-bold mb-2">Contact Us</h4>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="hover:text-red-600">Store Locator</a></li>
+                            <li><a href="#" class="hover:text-red-600">Track Order</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div>
+                        <h4 class="font-bold mb-2">Terms & Conditions</h4>
+                        <p class="text-sm text-gray-500">Please refer to our full terms for details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Store Section -->
+            <div class="w-full lg:w-1/3 px-4 flex flex-col items-center lg:items-center">
+                <div class="space-x-7 ">
+                    <a href="#">
+                        <img src="image/AppStor.png" alt="App Store" class="h-12" />
+                    </a>
+                    <a href="#">
+                        <img src="image/GoogleStor.png" alt="Google Play" class="h-12" />
+                    </a>
+                </div>
+                <div class="mt-10 text-center lg:text-right">
+                    <p class="text-sm text-red-600">Powered by</p>
+                    <p class="text-sm">SimpleX Technology Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: { delay: 1000, disableOnInteraction: true },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        });
+        const swiper = new Swiper(".customSwiper", {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.2,
+                },
+                768: {
+                    slidesPerView: 3.2,
+                },
+                1024: {
+                    slidesPerView: 5,
+                },
+            },
+        });
+        const menuBtn = document.getElementById('menu-btn');
+        const menuBtn2 = document.getElementById('menu-btn2');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        // Initial state
+        menuBtn2.classList.add('hidden');
+        mobileNav.classList.add('hidden');
+
+        // Show mobile menu
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('hidden');
+            menuBtn.classList.add('hidden');
+            menuBtn2.classList.remove('hidden');
+        });
+
+        // Hide mobile menu
+        menuBtn2.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            menuBtn.classList.remove('hidden');
+            menuBtn2.classList.add('hidden');
+        });
+
+    </script>
+</body>
+
+</html>
